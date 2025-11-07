@@ -49,7 +49,7 @@
     <section class="about-hero">
       <div class="container">
         <div class="tile-grid">
-          <img src="images/big logo.png" alt="">
+          <img src="images/large logo.png" alt="">
           <div class="tile"></div>
           <div class="tile"></div>
           <div class="tile"></div>
@@ -90,7 +90,7 @@
 
         <div class="story-grid">
           <div class="story">
-            <img src="images/yoga.png" alt=""><div>
+            <img src="images/sports.png" alt=""><div>
             <h3>Inspiring Transformations Story</h3><p>Nutritionist continues to empower individuals to transform their lives through personalized nutrition coaching. With an expanding client base and a growing network of experts, we remain committed to our goal of helping people live healthier, happier, more fulfilling lives.</p>
             <time datetime="2025-07-01">July 1, 2025</time></div></div>
 
@@ -98,12 +98,12 @@
           <div class="story"><div>
             <h3>Recognition and Accolades Story</h3>
             <p>Nutritionist received industry recognition for its excellence in personalized nutrition coaching. Our innovative approach and dedication to success earned us accolades and solidified our position as a leading provider in the field.</p>
-            <time datetime="2023-03-10">March 10, 2023</time></div><img src="images/tennis.png" alt=""></div>
+            <time datetime="2023-03-10">March 10, 2023</time></div><img src="images/sport tennis.png" alt=""></div>
 
           <div class="story">
-            <img src="images/plants.png" alt="">
+            <img src="images/hand3.png" alt="">
             <div><h3>Continued Growth Story</h3>
-              <p>Nutritionist celebrated serving over 5,000 clients — a testament to our commitment to helping individuals achieve their health and weight loss goals. This milestone highlighted the positive impact we have made on the lives of thousands of people.</p>
+              <p>Nutritionist celebrated serving over 5,000 clients a testament to our commitment to helping individuals achieve their health and weight loss goals. This milestone highlighted the positive impact we have made on the lives of thousands of people.</p>
               <time datetime="2021-11-02">November 2, 2021</time></div></div>
 
           <div class="story"><div>
@@ -121,11 +121,11 @@
             <h3>Innovating for Clients Story</h3>
             <p>Nutritionist introduced a mobile app, revolutionizing the way clients engage with their personalized nutrition plans. The app allowed for easy tracking of progress, access to resources, and seamless communication with our dedicated nutrition coaches.</p>
             <time datetime="2017-01-20">January 20, 2017</time>
-          </div><img src="images/work.png" alt=""></div>
+          </div><img src="images/4peopple.png" alt=""></div>
 
 
           <div class="story">
-            <img src="images/balloons.png" alt=""><div>
+            <img src="images/green balloons.png" alt=""><div>
             <h3>Celebrating Success Stories</h3>
             <p>Nutritionist celebrated its 500th client success story. These stories showcased the positive impact of personalized nutrition coaching on individuals’ lives, further motivating our team to continue providing exceptional services.</p>
             <time datetime="2015-09-05">September 5, 2015</time></div></div>
@@ -135,10 +135,10 @@
             <h3>Expanding Reach Story</h3>
             <p>Nutritionist expanded its services by launching an online platform, allowing individuals from all over the world to access personalized nutrition plans and expert guidance. This milestone brought convenience and accessibility to our growing client base.</p>
             <time datetime="2014-06-10">June 10, 2014</time>
-          </div><img src="images/obstacles.png" alt=""></div>
+          </div><img src="images/training.png" alt=""></div>
 
 
-          <div class="story"><img src="images/apples.png" alt=""><div>
+          <div class="story"><img src="images/two apples.png" alt=""><div>
             <h3>Research and Expertise Story</h3>
             <p>After extensive research and collaboration with nutrition experts, Nutritionist developed comprehensive programs rooted in scientific knowledge and evidence-based strategies, establishing itself as a trusted source of personalized nutrition coaching.</p>
             <time datetime="2012-03-15">March 15, 2012</time></div></div>
@@ -148,7 +148,7 @@
             <h3>The Inception Story</h3>
             <p>On this day, Nutritionist was born with the vision of helping individuals achieve their weight loss and health goals through personalized nutrition coaching. The founder recognized the need for a sustainable and effective approach to healthy living.</p>
             <time datetime="2010-01-01">January 1, 2010</time>
-          </div><img src="images/scientist.png" alt=""></div>
+          </div><img src="images/doctor.png" alt=""></div>
 
         </div>
       </div>
@@ -233,7 +233,9 @@
   <script>
     // Mobile nav
     const navToggle = document.querySelector('.nav-toggle');
+    
     const siteNav = document.getElementById('site-nav');
+
     navToggle.addEventListener('click', () => {
       const expanded = navToggle.getAttribute('aria-expanded') === 'true';
       navToggle.setAttribute('aria-expanded', String(!expanded));
@@ -242,8 +244,11 @@
 
     // Pricing switch
     const radios = document.querySelectorAll('input[name="billing"]');
+    
     const amounts = document.querySelectorAll('.amount');
+
     radios.forEach(r => r.addEventListener('change', () => {
+
       const yearly = document.querySelector('input[value="yearly"]').checked;
       amounts.forEach(a => a.textContent = yearly ? a.dataset.yearly : a.dataset.monthly);
     }));
