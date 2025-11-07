@@ -2,6 +2,38 @@
 ----------------------------------------------------- */
 
 /* RESET & BASE */
+
+
+/* NAV core */
+.site-header{ position:sticky; top:0; z-index:1000; }
+.header-inner{ display:grid; grid-template-columns:auto 1fr; align-items:center; gap:1rem; padding:.75rem 0; }
+.site-nav{ display:flex; align-items:center; justify-content:flex-end; gap:1rem; }
+.nav-list{ display:flex; gap:1rem; list-style:none; margin:0; padding:0; }
+.nav-list a{ text-decoration:none; font-weight:600; }
+
+/* Hamburger (hidden on desktop) */
+.nav-toggle{ display:none; background:none; border:0; cursor:pointer; }
+.nav-toggle .bar{ display:block; width:24px; height:2px; background:currentColor; margin:5px 0; border-radius:2px; }
+
+/* Mobile/Laptop behavior */
+@media (max-width: 980px){
+  .nav-toggle{ display:inline-block; }
+  .site-nav{
+    position:fixed; left:0; right:0; top:64px;
+    background:#fff; border-bottom:1px solid #e6e6e6;
+    transform:translateY(-140%); transition:transform .3s ease;
+    display:block; padding:1rem; z-index:999;
+  }
+  .site-nav.open{ transform:none; }
+  .nav-list{ flex-direction:column; gap:.6rem; }
+  .site-nav .btn-nav{ display:inline-block; margin-top:.5rem; }
+}
+
+/* Force reset for desktop so menu never stays hidden */
+@media (min-width: 981px){
+  #site-nav{ position:static; transform:none !important; display:flex; padding:0; background:transparent; border:0; }
+}  
+
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
@@ -151,18 +183,8 @@ blockquote{color:var(--gy35)}
   background: var(--g99);
   padding: 2.5rem 0 1rem;
 }
-.tile-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0.75rem;
-  justify-items: center;
-}
-.tile {
-  aspect-ratio: 1 / 1;
-  width: 100%;
-  background: var(--g85);
-  border-radius: 8px;
-}
+
+.go-top{display:grid;place-items:center;width:36px;height:36px;border-radius:999px;background:var(--dg20);color:var(--g99);text-decoration:none}
 .center-tile {
   grid-column: 3;
   grid-row: 1 / span 2;
@@ -412,7 +434,7 @@ blockquote{color:var(--gy35)}
 .team-tabs .pill{
   border:1px solid var(--g90); background:var(--white); color:var(--dg15);
   border-radius:999px; padding:.55rem .85rem; cursor:pointer; font-weight:600;
-  transition: background .2s ease, transform .15s ease;
+  transition:.2s ease, transform .15s ease;
 }
 .team-tabs .pill:hover{ transform: translateY(-1px); }
 .team-tabs .pill.is-active{ background:var(--g80); }
@@ -482,7 +504,7 @@ blockquote{color:var(--gy35)}
   display:flex; align-items:center; justify-content:center;
   width:36px; height:36px; border-radius:50%;
   background:#c3eb8b; color:#0e2a20; font-weight:800; text-decoration:none;
-  transition:transform .25s ease, background .25s ease;
+  transition:transform .25s ease, .25s ease;
 }
 .go-top:hover{ transform:translateY(-3px); background:#d4f59d }
 
